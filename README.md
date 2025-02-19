@@ -1,0 +1,1 @@
+# Neural-Networks-Workshop-Ressources-for-AI-Horizon-event
