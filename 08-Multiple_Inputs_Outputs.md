@@ -17,8 +17,9 @@ Neural networks can handle **multiple inputs** (e.g., petal and sepal widths) an
 - **Nodes**:  
   - Each node applies **ReLU activation** to inputs.  
   - **Example**:  
-    - Top Node: \( x_{\text{top}} = (\text{Petal} \times -2.5) + (\text{Sepal} \times 0.6) + 1.6 \).  
-    - Apply ReLU: \( \text{ReLU}(x_{\text{top}}) = \max(0, x_{\text{top}}) \).  
+
+     ![image](https://github.com/user-attachments/assets/ff7ff2d6-7ff8-4751-966c-af46e78bd77e)
+
 
 ### **2.3 Output Layer**  
 - **Outputs**:  
@@ -32,11 +33,12 @@ Neural networks can handle **multiple inputs** (e.g., petal and sepal widths) an
 ### **3.1 Single Output (Setosa Example)**  
 1. **Inputs**: Petal width = 0, Sepal width = 0.  
 2. **Hidden Layer**:  
-   - Top Node: \( x_{\text{top}} = 1.6 \rightarrow \text{ReLU}(1.6) = 1.6 \).  
-   - Bottom Node: Similar calculations.  
+
+    ![image](https://github.com/user-attachments/assets/929b15eb-1616-4511-a933-ae0eef9b954e)
+
 3. **Combine Hidden Outputs**:  
    - Multiply by weights (e.g., -0.1 for blue surface, 1.5 for orange surface).  
-   - Add outputs: \( -0.16 + 1.05 = 0.89 \).  
+   - Add outputs: -0.16 + 1.05 = 0.89.  
 4. **Final Prediction**: Setosa score = 0.89 (closer to 1 → likely Setosa).  
 
 ### **3.2 Multiple Outputs (All Species)**  
