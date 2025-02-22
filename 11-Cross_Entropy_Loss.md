@@ -32,11 +32,8 @@ For a dataset with \( N \) examples:
   - Versicolor: 0.52  
 
 **Cross-Entropy for Each Example**:  
-1. **Setosa**: \( -\log_e(0.57) \approx 0.56 \)  
-2. **Virginica**: \( -\log_e(0.58) \approx 0.54 \)  
-3. **Versicolor**: \( -\log_e(0.52) \approx 0.65 \)  
 
-**Total Cross-Entropy**: \( 0.56 + 0.54 + 0.65 = 1.75 \)  
+![image](https://github.com/user-attachments/assets/57a56bfc-edb1-4946-bc81-18dd73e8be91)
 
 ---
 
