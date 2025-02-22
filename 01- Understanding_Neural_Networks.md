@@ -1,4 +1,4 @@
-# Understanding Neural Networks – Inside the Black Box  
+# Understanding Neural Networks – Inside the Black Box
 
 ## **1. Introduction to Neural Networks**  
 Neural networks are powerful machine learning algorithms inspired by biological neurons. Despite their reputation as "black boxes," they can be understood by breaking down their components. This lesson simplifies neural networks using a drug dosage effectiveness example, showing how they model complex data patterns.  
