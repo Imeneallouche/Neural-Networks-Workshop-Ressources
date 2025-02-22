@@ -1,7 +1,7 @@
 # Backpropagation in Neural Networks – Optimizing Parameters  
 
 ## **1. Introduction to Backpropagation**  
-Backpropagation is an algorithm used to **train neural networks** by optimizing weights and biases. It combines the **chain rule** (for calculating derivatives) with **gradient descent** (for minimizing loss functions). This lesson breaks down how backpropagation adjusts the final bias term (\( b_3 \)) in a neural network to fit data.  
+Backpropagation is an algorithm used to **train neural networks** by optimizing weights and biases. It combines the **chain rule** (for calculating derivatives) with **gradient descent** (for minimizing loss functions). This lesson breaks down how backpropagation adjusts the final bias term (b3) in a neural network to fit data.  
 
 ---
 
@@ -12,12 +12,15 @@ Backpropagation is an algorithm used to **train neural networks** by optimizing 
 - **Output**: Predicted effectiveness (0 or 1).  
 - **Architecture**:  
   - **Hidden Layer**: Two nodes with SoftPlus activation.  
-  - **Parameters**: Weights (\( w_1, w_2, w_3, w_4 \)) and biases (\( b_1, b_2, b_3 \)).  
+  - **Parameters**: Weights (w1, w2, w3, w4) and biases ( b1, b2, b3).  
   - **Final Output**: Green squiggle = (Blue curve + Orange curve) + \( b_3 \).  
 
 ### **2.2 Loss Function**  
 - **Sum of Squared Residuals (SSR)**: Measures prediction error.  
-  - Example: SSR = \( (0 - \text{Predicted})^2 + (1 - \text{Predicted})^2 + (0 - \text{Predicted})^2 \).  
+  - Example:
+
+    ![image](https://github.com/user-attachments/assets/77d53a21-8d57-4b8c-ac8a-fd244c98521f)
+
 - **Goal**: Minimize SSR by optimizing \( b_3 \).  
 
 ---
@@ -30,30 +33,29 @@ Backpropagation is an algorithm used to **train neural networks** by optimizing 
    - Predicted values from the green squiggle (e.g., SSR = 20.4 when \( b_3 = 0 \)).  
 
 ### **3.2 Chain Rule Application**  
-- **Derivative of SSR w.r.t \( b_3 \)** = \( \frac{\partial \text{SSR}}{\partial \text{Predicted}} \times \frac{\partial \text{Predicted}}{\partial b_3} \).  
-  1. **First Term**:  
-     - \( \frac{\partial \text{SSR}}{\partial \text{Predicted}} = -2 \sum (\text{Observed} - \text{Predicted}) \).  
-  2. **Second Term**:  
-     - \( \frac{\partial \text{Predicted}}{\partial b_3} = 1 \) (since Predicted = Blue + Orange + \( b_3 \)).  
-  3. **Final Derivative**:  
-     - \( \frac{\partial \text{SSR}}{\partial b_3} = -2 \sum (\text{Observed} - \text{Predicted}) \).  
+- **Derivative of SSR w.r.t
+
+ ![image](https://github.com/user-attachments/assets/1bdeb89c-a69c-473d-a89d-7da7a7a55791)
+
+ ![image](https://github.com/user-attachments/assets/8e84c3b0-2a3d-4d6a-80bd-ee1960fe7305)
+
 
 ### **3.3 Gradient Descent**  
 1. **Compute Gradient**:  
-   - At \( b_3 = 0 \), gradient = -15.7.  
-2. **Update \( b_3 \)** with learning rate (e.g., 0.1):  
-   - Step Size = \( -15.7 \times 0.1 = -1.57 \).  
-   - New \( b_3 = 0 - (-1.57) = 1.57 \).  
+   - At b3 = 0, gradient = -15.7.  
+2. **Update b3** with learning rate (e.g., 0.1):  
+   - Step Size = -15.7 x 0.1 = -1.57 .  
+   - New b3 = 0 - (-1.57) = 1.57.  
 3. **Repeat**:  
-   - Recalculate SSR and gradient until step size ≈ 0 (e.g., \( b_3 = 2.61 \), SSR = 0.46).  
+   - Recalculate SSR and gradient until step size ≈ 0 (e.g., b3 = 2.61 , SSR = 0.46).  
 
 ---
 
 ## **4. Visualizing Parameter Optimization**  
-- **SSR vs \( b_3 \) Curve**:  
-  - Initial \( b_3 = 0 \) → SSR = 20.4.  
-  - After updates: \( b_3 = 2.61 \) → SSR ≈ 0.46 (minimum).  
-- **Effect of \( b_3 \)**: Adjusting \( b_3 \) shifts the green squiggle vertically to align predictions with observed data.  
+- **SSR vs b3 Curve**:  
+  - Initial b3 = 0 → SSR = 20.4.  
+  - After updates: b3 = 2.61 → SSR ≈ 0.46 (minimum).  
+- **Effect of b3**: Adjusting b3 shifts the green squiggle vertically to align predictions with observed data.  
 
 ---
 
