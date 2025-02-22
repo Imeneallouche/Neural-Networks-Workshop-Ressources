@@ -83,7 +83,7 @@ Traditional neural networks struggle with images due to:
 - **Max Pooling**: Downsizing by retaining maximum values.  
 
 ### **6.2 Activation Functions**  
-- **ReLU**: \( \text{ReLU}(x) = \max(0, x) \) → Efficient and avoids vanishing gradients.  
+- **ReLU**: ReLU}(x) = max(0, x) → Efficient and avoids vanishing gradients.  
 
 ### **6.3 Output Interpretation**  
 - **SoftMax**: Converts final layer outputs to probabilities (e.g., "X": 0.9, "O": 0.1).  
