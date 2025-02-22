@@ -48,15 +48,8 @@ For each output node \( i \):
 - Versicolor: -0.4  
 - Virginica: 0.23  
 
-**Step 1**: Compute \( e^{\text{Raw Output}} \):  
-- \( e^{1.43} = 4.18 \), \( e^{-0.4} = 0.67 \), \( e^{0.23} = 1.26 \).  
+![image](https://github.com/user-attachments/assets/73377894-70eb-4de2-84ad-652ac23049f3)
 
-**Step 2**: Sum exponents: \( 4.18 + 0.67 + 1.26 = 6.11 \).  
-
-**Step 3**: Divide each exponent by the sum:  
-- Setosa: \( \frac{4.18}{6.11} = 0.69 \),  
-- Versicolor: \( \frac{0.67}{6.11} = 0.10 \),  
-- Virginica: \( \frac{1.26}{6.11} = 0.21 \).  
 
 **Result**: Probabilities = [0.69, 0.10, 0.21].  
 
@@ -65,11 +58,14 @@ For each output node \( i \):
 ## **5. Why SoftMax is Used for Training**  
 
 ### **5.1 Smooth Gradients**  
-- **Derivative of SoftMax**:  
-  - For output \( i \): \( \text{SoftMax}(i) \times (1 - \text{SoftMax}(i)) \).  
-  - *Example*: For Setosa (0.69), derivative = \( 0.69 \times (1 - 0.69) = 0.21 \).  
-- **Cross-Output Derivatives**:  
-  - For output \( j \neq i \): \( -\text{SoftMax}(i) \times \text{SoftMax}(j) \).  
+- **Derivative of SoftMax**:
+  
+  ![image](https://github.com/user-attachments/assets/852c2c05-4195-49c9-bea0-f33eb21bf6a0)
+
+- **Cross-Output Derivatives**:
+
+   ![image](https://github.com/user-attachments/assets/2bb448fb-544b-4195-a53a-ed380f37acd9)
+
 
 ### **5.2 Probabilistic Interpretation**  
 - **Mutually Exclusive**: Probabilities sum to 1 (e.g., 0.69 + 0.10 + 0.21 = 1).  
