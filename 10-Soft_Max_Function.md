@@ -6,9 +6,11 @@ The **SoftMax function** converts raw neural network outputs into probabilities,
 ---
 
 ## **2. SoftMax Function Overview**  
-For a class \( i \), SoftMax is defined as:  
-\[ \text{SoftMax}(i) = \frac{e^{z_i}}{\sum_{j=1}^n e^{z_j}} \]  
-- \( z_i \): Raw output for class \( i \).  
+For a class i, SoftMax is defined as:  
+
+![image](https://github.com/user-attachments/assets/b76df042-bf7d-44ad-8586-538f2fb2e7d6)
+
+- zi: Raw output for class i.  
 - **Output**: Probability between 0 and 1.  
 
 ---
@@ -16,9 +18,9 @@ For a class \( i \), SoftMax is defined as:
 ## **3. Derivative of SoftMax for Same Class (Setosa w.r.t. Setosa)**  
 
 ### **3.1 Quotient Rule Application**  
-Given \( \text{SoftMax}(s) = \frac{e^{z_s}}{e^{z_s} + e^{z_v} + e^{z_g}} \):  
-1. **Numerator Derivative**: \( \frac{d}{dz_s} e^{z_s} = e^{z_s} \).  
-2. **Denominator Derivative**: \( \frac{d}{dz_s} (e^{z_s} + e^{z_v} + e^{z_g}) = e^{z_s} \).  
+
+![image](https://github.com/user-attachments/assets/dc9701e3-0e64-46c4-b9ba-2ce8e08ebdfb)
+
 
 ### **3.2 Applying the Quotient Rule**  
 \[
@@ -30,16 +32,17 @@ Simplify:
 \]  
 
 **Example**:  
-- If \( \text{SoftMax}(s) = 0.69 \), derivative = \( 0.69 \times (1 - 0.69) = 0.21 \).  
+
+![image](https://github.com/user-attachments/assets/1fe1b1eb-a4b5-4ac5-be3c-18cff42f120c)
 
 ---
 
 ## **4. Derivative of SoftMax for Different Classes (Setosa w.r.t. Versicolor)**  
 
 ### **4.1 Quotient Rule for Cross-Derivatives**  
-For \( \frac{\partial \text{SoftMax}(s)}{\partial z_v} \):  
-1. **Numerator Derivative**: \( \frac{\partial e^{z_s}}{\partial z_v} = 0 \).  
-2. **Denominator Derivative**: \( \frac{\partial (e^{z_s} + e^{z_v} + e^{z_g})}{\partial z_v} = e^{z_v} \).  
+
+![image](https://github.com/user-attachments/assets/9c0f30a7-2119-44ec-9469-ac8e4899c716)
+
 
 ### **4.2 Simplifying the Derivative**  
 \[
@@ -47,19 +50,15 @@ For \( \frac{\partial \text{SoftMax}(s)}{\partial z_v} \):
 \]  
 
 **Example**:  
-- If \( \text{SoftMax}(s) = 0.69 \) and \( \text{SoftMax}(v) = 0.10 \), derivative = \( -0.69 \times 0.10 = -0.07 \).  
+
+![image](https://github.com/user-attachments/assets/c2650264-1293-43e8-9fcd-4dac097f4cb9)
 
 ---
 
 ## **5. General Derivative Rules**  
-- **Same Class**:  
-  \[
-  \frac{\partial \text{SoftMax}(i)}{\partial z_i} = \text{SoftMax}(i) \cdot (1 - \text{SoftMax}(i))
-  \]  
-- **Different Class**:  
-  \[
-  \frac{\partial \text{SoftMax}(i)}{\partial z_j} = -\text{SoftMax}(i) \cdot \text{SoftMax}(j) \quad (i \neq j)
-  \]  
+
+![image](https://github.com/user-attachments/assets/ffd0ec80-c273-42d0-86a4-dcee90d220ac)
+
 
 ---
 
@@ -78,6 +77,7 @@ For \( \frac{\partial \text{SoftMax}(s)}{\partial z_v} \):
 
 ## **8. Summary**  
 The SoftMax derivative is foundational for training neural networks:  
-1. **Same-Class**: \( \text{SoftMax}(i) \cdot (1 - \text{SoftMax}(i)) \).  
-2. **Cross-Class**: \( -\text{SoftMax}(i) \cdot \text{SoftMax}(j) \).  
+
+ ![image](https://github.com/user-attachments/assets/141ebed4-5508-4910-9441-f84fbe8afdbc)
+
 By leveraging these rules, gradients flow smoothly through the network, enabling effective learning.  
