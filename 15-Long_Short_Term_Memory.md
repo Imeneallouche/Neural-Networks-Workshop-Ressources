@@ -29,7 +29,7 @@ Traditional RNNs struggle with **long-term dependencies** due to vanishing/explo
 ## **3. Step-by-Step: How LSTMs Work**  
 
 ### **3.1 Forget Gate**  
-1. **Inputs**: Previous hidden state (\( h_{t-1} \)) and current input (\( x_t \)).  
+1. **Inputs**: Previous hidden state (h{t-1}) and current input (xt).  
 2. **Operation**:  
    \[
    f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f)
@@ -86,7 +86,11 @@ Traditional RNNs struggle with **long-term dependencies** due to vanishing/explo
 ---
 
 ## **5. Why LSTMs Avoid Gradient Issues**  
-- **Cell State Design**: Additive updates (\( C_t = f_t \odot C_{t-1} + i_t \odot \tilde{C}_t \)) prevent multiplicative gradient decay/explosion.  
+- **Cell State Design**: Additive updates
+
+![image](https://github.com/user-attachments/assets/09526ad8-dbc2-440f-8897-ece5dc2b6f25)
+
+   prevent multiplicative gradient decay/explosion.  
 - **Gating**: Sigmoid (0–1) and tanh (-1–1) regulate information flow, stabilizing gradients during backpropagation.  
 
 ---
