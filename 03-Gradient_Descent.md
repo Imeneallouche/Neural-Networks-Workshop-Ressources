@@ -9,8 +9,11 @@ Gradient Descent is an iterative optimization algorithm used to **minimize a los
 
 ### **2.1 Loss Function**  
 - **Purpose**: Quantifies model error (e.g., **Sum of Squared Residuals** for linear regression).  
-- **Example**: For a line \( \text{Height} = \text{Intercept} + \text{Slope} \times \text{Weight} \),  
-  \( \text{SSR} = \sum (\text{Observed Height} - \text{Predicted Height})^2 \).  
+- **Example**: For a line
+
+  ![image](https://github.com/user-attachments/assets/06d851cd-2e45-4126-9210-bfba06a4c65e)
+
+  ![image](https://github.com/user-attachments/assets/d827007e-6dd7-4c64-9065-68bd3d3cd5b8)
 
 ### **2.2 Learning Rate**  
 - **Role**: Controls step size during parameter updates.  
@@ -20,9 +23,10 @@ Gradient Descent is an iterative optimization algorithm used to **minimize a los
 
 ### **2.3 Gradient**  
 - **Definition**: Vector of partial derivatives of the loss function with respect to each parameter.  
-- **Example**: For parameters \( \text{Intercept} \) and \( \text{Slope} \), compute:  
-  - \( \frac{\partial \text{SSR}}{\partial \text{Intercept}} \),  
-  - \( \frac{\partial \text{SSR}}{\partial \text{Slope}} \).  
+- **Example**: For parameters \( \text{Intercept} \) and \( \text{Slope} \), compute:
+
+  ![image](https://github.com/user-attachments/assets/98a148b7-7dcc-46fc-af20-f20a67563be4)
+
 
 ---
 
@@ -32,9 +36,13 @@ Gradient Descent is an iterative optimization algorithm used to **minimize a los
 1. **Initialize**: Set a random intercept (e.g., 0).  
 2. **Calculate Residuals**: Predict heights using current intercept.  
 3. **Compute Gradient**:  
-   - \( \frac{\partial \text{SSR}}{\partial \text{Intercept}} = -2 \sum (\text{Observed} - \text{Predicted}) \).  
+
+    ![image](https://github.com/user-attachments/assets/c063e8a0-9d3a-4321-ad64-0eb50b60e3b6)
+
 4. **Update Intercept**:  
-   - \( \text{New Intercept} = \text{Old Intercept} - (\text{Learning Rate} \times \text{Gradient}) \).  
+
+   ![image](https://github.com/user-attachments/assets/bd2b575c-052c-4388-bf9a-d942c9ec978b)
+
 5. **Repeat**: Until gradient ≈ 0 (indicating convergence).  
 
 **Example**:  
@@ -45,10 +53,13 @@ Gradient Descent is an iterative optimization algorithm used to **minimize a los
 ### **3.2 Multiple Parameter Optimization (Intercept + Slope)**  
 1. **Initialize**: Random values for intercept and slope (e.g., 0 and 1).  
 2. **Compute Gradients**:  
-   - \( \frac{\partial \text{SSR}}{\partial \text{Intercept}} = -2 \sum (\text{Observed} - \text{Predicted}) \),  
-   - \( \frac{\partial \text{SSR}}{\partial \text{Slope}} = -2 \sum \text{Weight} \times (\text{Observed} - \text{Predicted}) \).  
+
+    ![image](https://github.com/user-attachments/assets/670efbcc-2f50-4229-aa54-ccc08820ffa9)
+
 3. **Update Parameters**:  
-   - \( \text{New Param} = \text{Old Param} - (\text{Learning Rate} \times \text{Gradient}) \).  
+
+   ![image](https://github.com/user-attachments/assets/14d83636-21c1-45ce-ace9-06b04f74040c)
+
 4. **Repeat**: Until all gradients are near zero.  
 
 **Example**:  
