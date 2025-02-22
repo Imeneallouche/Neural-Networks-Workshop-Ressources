@@ -22,7 +22,7 @@ Traditional neural networks struggle with **sequential data** (e.g., time series
 ### **2.2 Unrolling the Network**  
 - **Process**: Convert the feedback loop into sequential copies of the network.  
   - Example: For 3 days of stock data, unroll the RNN into 3 time steps.  
-- **Shared Weights**: The same weights (\( W_1, W_2 \)) and biases (\( b_1 \)) are reused across all time steps.  
+- **Shared Weights**: The same weights W1, W2 ) and biases ( b1 ) are reused across all time steps.  
 
 ---
 
@@ -38,28 +38,28 @@ Traditional neural networks struggle with **sequential data** (e.g., time series
     - High → Medium → Tomorrow low.  
 
 ### **3.2 Forward Pass**  
-1. **Input**: Yesterday’s value (\( t-1 \)) → Process through the RNN.  
-2. **Feedback**: Hidden state (\( Y_1 \)) is passed to the next time step.  
-3. **Next Input**: Today’s value (\( t \)) combines with \( Y_1 \).  
-4. **Output**: Predict tomorrow’s value (\( t+1 \)).  
+1. **Input**: Yesterday’s value (t-1) → Process through the RNN.  
+2. **Feedback**: Hidden state (Y1) is passed to the next time step.  
+3. **Next Input**: Today’s value (t) combines with Y1.  
+4. **Output**: Predict tomorrow’s value (t+1).  
 
 **Example**:  
-- **Yesterday (Low = 0)** → Hidden state \( Y_1 = \text{ReLU}(W_1 \cdot 0 + b_1) \).  
-- **Today (Low = 0)** → Hidden state \( Y_2 = \text{ReLU}(W_1 \cdot 0 + W_2 \cdot Y_1 + b_1) \).  
-- **Prediction**: \( \text{Output} = W_3 \cdot Y_2 + b_2 \).  
+
+![image](https://github.com/user-attachments/assets/84b61755-e3d5-4715-9ab8-95a2be6b525b)
+
 
 ---
 
 ## **4. Key Concepts**  
 
 ### **4.1 Shared Parameters**  
-- **Weights (\( W_1, W_2 \))** and **biases (\( b_1 \))** are reused across all unrolled time steps.  
+- **Weights W1, W2** and **biases b1** are reused across all unrolled time steps.  
 - **Benefit**: Reduces the number of parameters, making training feasible.  
 
 ### **4.2 Vanishing/Exploding Gradients**  
 - **Cause**: Repeated multiplication of weights during backpropagation through time (BPTT).  
-  - **Exploding Gradients**: \( W_2 > 1 \) → Gradients grow exponentially (e.g., \( 2^{50} \)).  
-  - **Vanishing Gradients**: \( W_2 < 1 \) → Gradients shrink to near-zero (e.g., \( 0.5^{50} \)).  
+  - **Exploding Gradients**: W2 > 1 → Gradients grow exponentially (e.g., 2^{50}).  
+  - **Vanishing Gradients**: W2 < 1 → Gradients shrink to near-zero (e.g., 0.5^{50}).  
 - **Impact**:  
   - Exploding: Unstable training (overshooting optimal parameters).  
   - Vanishing: Slow/no convergence (tiny updates).  
@@ -83,8 +83,8 @@ Traditional neural networks struggle with **sequential data** (e.g., time series
 ## **6. Practical Example**  
 
 ### **6.1 Three Days of Data**  
-- **Unrolling**: Expand the RNN into 3 time steps (day \( t-2 \), \( t-1 \), \( t \)).  
-- **Prediction**: Final output at \( t+1 \) uses all prior hidden states.  
+- **Unrolling**: Expand the RNN into 3 time steps (day t-2, t-1, t).  
+- **Prediction**: Final output at t+1 uses all prior hidden states.  
 
 ### **6.2 Training with Backpropagation**  
 1. **Forward Pass**: Compute predictions for all time steps.  
@@ -97,6 +97,3 @@ Traditional neural networks struggle with **sequential data** (e.g., time series
 - **RNNs** excel at processing sequential data by maintaining memory through feedback loops.  
 - **Unrolling** allows handling of variable-length inputs.  
 - **Vanishing/Exploding Gradients** are major challenges, addressed by techniques like **LSTMs**.  
-
----  
-**Next Quest**: Learn how **Long Short-Term Memory Networks (LSTMs)** solve gradient issues!  
